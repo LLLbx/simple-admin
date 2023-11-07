@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import c1 from './components/c1';
-import {form1} from './pages/form1'
+// import c1 from "./components/c1";
+// import { form1 } from "@/pages/form1";
 
-const { arr: arr1, serch, searchForm } = form1();
+// const { arr: arr1, serch, searchForm, columns } = form1();
+// console.log(columns, 'columns');
 
 </script>
 
 <template>
-  <c1 :tagData="arr1" @search="serch" :searchForm="searchForm"/>
+  <!-- <c1 :tagData="arr1" @search="serch" :searchForm="searchForm" :columnForm="columns" /> -->
+  <RouterView/>
 </template>
 
 <style scoped>
