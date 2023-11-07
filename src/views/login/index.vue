@@ -23,6 +23,8 @@ import { Form } from "ant-design-vue";
 import { loginForm, loginFn } from "./login";
 
 const { form, login } = loginFn();
+
+const a = 1
 </script>
 
 <style lang="scss" scoped>
