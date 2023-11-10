@@ -9,4 +9,8 @@ const BASIC_PAGE: RouteRecordRaw[] = [
   },
 ];
 
+const ROLE_PAGE: RouteRecordRaw[] = [
+  
+]
+
 export const routes = BASIC_PAGE;

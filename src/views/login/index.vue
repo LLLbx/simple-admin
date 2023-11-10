@@ -1,15 +1,14 @@
 <template>
   <div class="login_page">
+    <div class="back_img">
+    </div>
     <div>
-      <Form>
+      <Form :model="form">
         <a-form-item
           v-for="item in loginForm"
-          :key="item.name"
-          :label="item.label"
-          :name="item.name"
-          :rules="item.rules"
+          v-bind="item"
         >
-          <a-input v-model:value="form[item.name]"/>
+          <a-input v-model:value="form[item.key]"/>
         </a-form-item>
       </Form>
 
@@ -24,13 +23,21 @@ import { loginForm, loginFn } from "./login";
 
 const { form, login } = loginFn();
 
-const a = 1
+
 </script>
 
 <style lang="scss" scoped>
+
 .login_page {
   width: 100vw;
   height: 100vh;
   display: flex;
+}
+
+.back_img {
+  height: 100vh;
+  width: 50%;
+  background-image: url("@/assets/img//back.jpg");
+  object-fit: contain;
 }
 </style>
