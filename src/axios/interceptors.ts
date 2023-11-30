@@ -1,6 +1,6 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
-const requestInterceptor = (config: AxiosRequestConfig) => {
+const requestInterceptor = (config: InternalAxiosRequestConfig) => {
     console.log(config);
     
     return config

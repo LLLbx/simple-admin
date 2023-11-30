@@ -1,4 +1,5 @@
 import axios from "axios";
+import { requestInterceptor, responseInterceptor } from "./interceptors";
 
 const vueAxios =  axios.create({
     baseURL: '/api',
@@ -8,6 +9,14 @@ const vueAxios =  axios.create({
 
 export const testApi = axios.create({
     baseURL: 'https://v.api.aa1.cn/api/',
+})
+
+testApi.interceptors.request.use(requestInterceptor, (error) => {
+    console.warn(error)
+})
+
+testApi.interceptors.response.use(responseInterceptor, (error) => {
+    console.warn(error)
 })
 
 vueAxios.interceptors.request.use((config) => {
