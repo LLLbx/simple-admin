@@ -97,7 +97,6 @@ export default defineComponent<Props>(
             search
           </Button>
         </div>
-
         <div>
           <Table columns={columnForm}></Table>
         </div>

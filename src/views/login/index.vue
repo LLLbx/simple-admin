@@ -11,8 +11,13 @@
           <a-input v-model:value="form[item.key]"/>
         </a-form-item>
       </Form>
-
       <a-button @click="login">submit</a-button>
+
+      <input type="text" v-model="text1">
+      <span :key="text1">{{ text1 }}</span>
+      <Transition>
+        <span :key="text1">{{ text1 }}</span>
+      </Transition>
     </div>
   </div>
 </template>
@@ -20,10 +25,20 @@
 <script lang="ts" setup>
 import { Form } from "ant-design-vue";
 import { loginForm, loginFn } from "./login";
+import { ref } from "vue";
 
 const { form, login } = loginFn();
 
+const text1 = ref(1)
 
+const aa = async () => {
+  await new Promise((res) => {
+    setTimeout(() => res(100), 10000)
+  })
+  
+}
+
+aa()
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +52,7 @@ const { form, login } = loginFn();
 .back_img {
   height: 100vh;
   width: 50%;
-  background-image: url("@/assets/img//back.jpg");
+  background-image: url("@/assets/img/background2.jpeg");
   object-fit: contain;
 }
 </style>
