@@ -1,7 +1,7 @@
 import { ref, reactive } from "vue";
 import { FormItemProps } from "ant-design-vue";
 import { customRef } from 'vue'
-import { getTest } from "@/api/user";
+import { getTest, createUser } from "@/api/user";
 
 type _Item = {
   key: string,
@@ -31,7 +31,11 @@ export const loginFn = () => {
   const form = reactive(defaultForm);
   const login = () => {
     console.log(form);
-    getTest()
+    getTest('1')
+    createUser({
+      username: 'eko',
+      password: 'qwq'
+    })
   };
   return { form, login };
 };

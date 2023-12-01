@@ -7,6 +7,8 @@ const requestInterceptor = (config: InternalAxiosRequestConfig) => {
 }
 
 const responseInterceptor = (res: AxiosResponse) => {
+    console.log(res);
+    
     return res
 }
 

@@ -28,6 +28,16 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
   server: {
-    hmr: true
+    cors: true,
+    hmr: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/',
+        changeOrigin: true,
+        rewrite(path) {
+            return path.replace(/^\/api/, '')
+        },
+      }
+    }
   }
 });
