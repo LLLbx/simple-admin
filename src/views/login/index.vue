@@ -25,7 +25,9 @@
 <script lang="ts" setup>
 import { Form } from "ant-design-vue";
 import { loginForm, loginFn } from "./login";
-import { ref } from "vue";
+import { ref, version } from "vue";
+
+console.log(version);
 
 const { form, login } = loginFn();
 
